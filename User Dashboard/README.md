@@ -27,6 +27,10 @@ The Smart Medibox User Dashboard allows users to:
 ### Graphical Display
 - Interactive graphs to visualize temperature and light intensity variations over time.
 - Easy-to-read charts for tracking changes and identifying patterns.
+  
+![Screenshot (26)](https://github.com/MihiruthS/Smart-Medibox/assets/166645514/b0b21731-fbdf-47ce-b699-196e75ca6b92)
+
+
 
 
 
