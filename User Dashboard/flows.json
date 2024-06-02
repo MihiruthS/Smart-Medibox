@@ -1,0 +1,743 @@
+[
+    {
+        "id": "ab5ecae550031760",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0aa695902d978c75",
+        "type": "mqtt in",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "topic": "LIGHT_INTENSITY_RIGHT_MIHI",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ab0a2509d76c02a7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "b912bf6cedd25337"
+            ]
+        ]
+    },
+    {
+        "id": "b912bf6cedd25337",
+        "type": "delay",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "92ebd850f029425f"
+            ]
+        ]
+    },
+    {
+        "id": "92ebd850f029425f",
+        "type": "function",
+        "z": "ab5ecae550031760",
+        "name": "RIght LDR",
+        "func": "return {payload: msg.payload,\ntopic:\"Right\"\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 140,
+        "wires": [
+            [
+                "362ba6ece13884c0",
+                "2738ac9196ee2109",
+                "4769f4e955e73f6f"
+            ]
+        ]
+    },
+    {
+        "id": "362ba6ece13884c0",
+        "type": "ui_chart",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "group": "d3d65a9fc9b88815",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Light Comparison",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 970,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2738ac9196ee2109",
+        "type": "ui_chart",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "group": "d3d65a9fc9b88815",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Light Intensity",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 980,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b84e18d905798050",
+        "type": "mqtt in",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "topic": "LIGHT_INTENSITY_LEFT_MIHI",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "b6d003d61bfcf252",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 300,
+        "wires": [
+            [
+                "527c664fbab9ac65"
+            ]
+        ]
+    },
+    {
+        "id": "527c664fbab9ac65",
+        "type": "delay",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "6c8ea7cf4e077d9a"
+            ]
+        ]
+    },
+    {
+        "id": "6c8ea7cf4e077d9a",
+        "type": "function",
+        "z": "ab5ecae550031760",
+        "name": "Left LDR",
+        "func": "return {payload: msg.payload,\ntopic:\"Left\"};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 300,
+        "wires": [
+            [
+                "2738ac9196ee2109",
+                "362ba6ece13884c0",
+                "f4150e3d8f8a17e6"
+            ]
+        ]
+    },
+    {
+        "id": "4769f4e955e73f6f",
+        "type": "change",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "right_LDR",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 300,
+        "wires": [
+            [
+                "a36f2b9067955566"
+            ]
+        ]
+    },
+    {
+        "id": "f4150e3d8f8a17e6",
+        "type": "change",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "left_LDR",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 970,
+        "y": 360,
+        "wires": [
+            [
+                "a36f2b9067955566"
+            ]
+        ]
+    },
+    {
+        "id": "a36f2b9067955566",
+        "type": "function",
+        "z": "ab5ecae550031760",
+        "name": "Max Payload",
+        "func": "let right_LDR = global.get(\"right_LDR\");\nlet left_LDR = global.get(\"left_LDR\");\n\nlet max = right_LDR;\n\nif(left_LDR>max){\n    max = left_LDR;\n}\n\nreturn{\npayload:max\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1170,
+        "y": 340,
+        "wires": [
+            [
+                "67c0390df43c14ea"
+            ]
+        ]
+    },
+    {
+        "id": "67c0390df43c14ea",
+        "type": "ui_gauge",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "group": "d3d65a9fc9b88815",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Maximum Light",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1160,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "78b83ec64587fcad",
+        "type": "mqtt in",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "topic": "TEMPERATURE_MIHI",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "ab0a2509d76c02a7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 560,
+        "wires": [
+            [
+                "5fc758f0092d29b7"
+            ]
+        ]
+    },
+    {
+        "id": "5fc758f0092d29b7",
+        "type": "delay",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 440,
+        "y": 560,
+        "wires": [
+            [
+                "f8b15d41cd16d753",
+                "ec9fa63cf9caab89"
+            ]
+        ]
+    },
+    {
+        "id": "ec9fa63cf9caab89",
+        "type": "ui_gauge",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "group": "6dfa7cc64d89ba38",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "Celsius",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "80",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 710,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "f8b15d41cd16d753",
+        "type": "ui_chart",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "group": "6dfa7cc64d89ba38",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature Variation",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "80",
+        "removeOlder": "30",
+        "removeOlderPoints": "1000",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 720,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "23f55de90cf7c712",
+        "type": "ui_dropdown",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "label": "Presets",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "e054168f36802448",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Default",
+                "value": "Default",
+                "type": "str"
+            },
+            {
+                "label": "Medicine 1",
+                "value": "Medicine 1",
+                "type": "str"
+            },
+            {
+                "label": "Medicine 2",
+                "value": "Medicine 2",
+                "type": "str"
+            },
+            {
+                "label": "Medicine 3",
+                "value": "Medicine 3",
+                "type": "str"
+            },
+            {
+                "label": "Medicine 4",
+                "value": "Medicine 4",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 180,
+        "y": 780,
+        "wires": [
+            [
+                "97033da741fa29c2",
+                "7b7cf404702366c8"
+            ]
+        ]
+    },
+    {
+        "id": "97033da741fa29c2",
+        "type": "function",
+        "z": "ab5ecae550031760",
+        "name": "Minimum Angle Set",
+        "func": "if (msg.payload == \"Medicine 1\") {\n    return { payload: 50 };\n} else if (msg.payload == \"Medicine 2\") {\n    return { payload: 70 };\n} else if (msg.payload == \"Medicine 3\") {\n    return { payload: 90 };\n} else if (msg.payload == \"Medicine 4\") {\n    return { payload: 110 };\n} else {\n    return { payload: 30 };\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 760,
+        "wires": [
+            [
+                "44147dda2ff5699f"
+            ]
+        ]
+    },
+    {
+        "id": "7b7cf404702366c8",
+        "type": "function",
+        "z": "ab5ecae550031760",
+        "name": "Controling Factor Set",
+        "func": "if(msg.payload == \"Medicine 1\"){\n    return {payload:0.45};\n} else if (msg.payload == \"Medicine 2\"){\n    return {payload:0.1};\n}else if (msg.payload == \"Medicine 3\"){\n    return {payload:0.35};\n}else if (msg.payload == \"Medicine 4\"){\n    return {payload:0.9};\n}else{\n    return {payload:0.75};\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 820,
+        "wires": [
+            [
+                "1c2a23bd842f5e91"
+            ]
+        ]
+    },
+    {
+        "id": "44147dda2ff5699f",
+        "type": "ui_slider",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "label": "Minimum Angle",
+        "tooltip": "",
+        "group": "e054168f36802448",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "min_ang",
+        "topicType": "str",
+        "min": 0,
+        "max": "120",
+        "step": 1,
+        "className": "",
+        "x": 720,
+        "y": 760,
+        "wires": [
+            [
+                "b1e61e8f5a1719a3"
+            ]
+        ]
+    },
+    {
+        "id": "1c2a23bd842f5e91",
+        "type": "ui_slider",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "label": "Controling Factor",
+        "tooltip": "",
+        "group": "e054168f36802448",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "cf",
+        "topicType": "str",
+        "min": 0,
+        "max": "1",
+        "step": "0.05",
+        "className": "",
+        "x": 730,
+        "y": 820,
+        "wires": [
+            [
+                "59a0daeb9ae92d28"
+            ]
+        ]
+    },
+    {
+        "id": "b1e61e8f5a1719a3",
+        "type": "mqtt out",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "topic": "MIN_ANG_ADJUSTMENT",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ab0a2509d76c02a7",
+        "x": 1060,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "59a0daeb9ae92d28",
+        "type": "mqtt out",
+        "z": "ab5ecae550031760",
+        "name": "",
+        "topic": "CF_ADJUSTMENT",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ab0a2509d76c02a7",
+        "x": 1070,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "ab0a2509d76c02a7",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d3d65a9fc9b88815",
+        "type": "ui_group",
+        "name": "Light",
+        "tab": "303acdd1bf457f37",
+        "order": 1,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b6d003d61bfcf252",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6dfa7cc64d89ba38",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "303acdd1bf457f37",
+        "order": 2,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e054168f36802448",
+        "type": "ui_group",
+        "name": "Servo",
+        "tab": "303acdd1bf457f37",
+        "order": 4,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "303acdd1bf457f37",
+        "type": "ui_tab",
+        "name": "Medibox",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
